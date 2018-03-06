@@ -30,6 +30,9 @@ public class WeatherService {
         return weatherManager.getEntities().stream().min((first, second) -> Double.compare(first.getAvSP(), second.getAvSP())).get();
         //return weatherManager.getEntities().stream().mapToDouble(WeatherEntity::getAvSP).min().orElse(-1);
     }
+    /**
+     * fills the entitymanager with contents of a file
+     */
     private void initialise(){
         Logger LOGGER = Logger.getLogger(WeatherService.class.getName());
         IFileReader fileReader = new CSVFileReader();
